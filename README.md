@@ -8,7 +8,7 @@ apt install dnsmasq
 # //配置网卡规则  
 iptables --table nat --append POSTROUTING --out-interface wlan0 -j MASQUERADE  
 iptables --append FORWARD --in-interface wlan1mon -j ACCEPT    
-#//设置网关IP以及子网掩码  
+//设置网关IP以及子网掩码  
 ifconfig wlan1mon up 192.168.1.1 netmask 255.255.255.0  
 route add -net 192.168.1.0 netmask 255.255.255.0 gw 192.168.1.1  
 # //开启流量转发  
