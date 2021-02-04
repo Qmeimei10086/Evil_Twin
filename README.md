@@ -2,6 +2,7 @@
 
 安装:
 apt install hostapd
+
 apt install dnsmasq
 
 //配置网卡规则
